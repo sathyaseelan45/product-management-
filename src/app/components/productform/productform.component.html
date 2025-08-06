@@ -1,0 +1,60 @@
+<div class="card mt-4 shadow">
+  <div class="card-header bg-primary text-white">
+    {{ editproduct ? "Edit" : "Add" }}
+  </div>
+  <div class="card-body">
+    <form action="" [formGroup]="form" (ngSubmit)="save()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          formControlName="name"
+          class="form-control"
+          placeholder="Enter the name"
+        />
+        <div
+          *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+          class="text-danger"
+        >
+          name is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input
+          type="number"
+          name="price"
+          formControlName="price"
+          class="form-control"
+          placeholder="Enter the price"
+        />
+        <div
+          *ngIf="form.get('price')?.invalid && form.get('price')?.touched"
+          class="text-danger"
+        >
+          price is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Category</label>
+        <input
+          type="text"
+          name="category"
+          formControlName="category"
+          class="form-control"
+          placeholder="Enter the category"
+        />
+        <div
+          *ngIf="form.get('category')?.invalid && form.get('category')?.touched"
+          class="text-danger"
+        >
+          category is required.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary rounded w-100">
+        {{ editproduct ? "Update" : "Add" }}Product
+      </button>
+    </form>
+  </div>
+</div>
