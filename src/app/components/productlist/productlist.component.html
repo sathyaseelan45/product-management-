@@ -1,37 +1,44 @@
 <div class="card mt-4 shadow-lg">
-    <div class="card-header bg-dark text-white">Product List</div>
-    <ul class="list-group list-group-flush"  cdkDropList
-    (cdkDropListDropped)="drop($event)">
-        <li class="card-body list-group-item"  *ngFor="let p of products()" cdkDrag>
-            <!-- <strong class="fw-bold">{{p.name}}</strong>{{p.price|currency:'INR'}}<br>
-            <small class="text-muted">{{p.category}}</small>
-
-            <div>
-                <div class="fw-bold"></div>
-                <button type="submit" class="btn btn-sm btn-outline-primary me-2" (click)="editproduct(p)">Edit</button>
-                <button type="submit" class="btn btn-sm btn-outline-danger" (click)="delete(p.id)">Delete</button>
-            </div> -->
-             <div class="d-flex justify-content-between align-items-center">
-    
-    
-    <div>
-      <div class="fw-bold">{{ p.name }}</div>
-      <small class="text-muted">{{ p.category }}</small>
-    </div>
-
-    
-    <div class="text-end">
-      <div class="fw-bold">{{p.price|currency:'INR'}}</div>
-      <div class="mt-1">
-        <button class="btn btn-sm btn-outline-primary me-2" (click)="editproduct(p)">Edit</button>
-        <button class="btn btn-sm btn-outline-danger" (click)="delete(p.id)">Delete</button>
-      </div>
-    </div>
-
-  </div>
-        </li>
-        <div class="text-end m-2">
-            <button type="submit" class="btn btn-secondary rounded" (click)="clearall()">ClearAll</button>
+  <div class="card-header bg-dark text-white">Product List</div>
+  <ul
+    class="list-group list-group-flush"
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+  >
+    <li class="card-body list-group-item" *ngFor="let p of products()" cdkDrag>
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <div class="fw-bold">{{ p.name }}</div>
+          <small class="text-muted">{{ p.category }}</small>
         </div>
-    </ul>
+
+        <div class="text-end">
+          <div class="fw-bold">{{ p.price | currency : "INR" }}</div>
+          <div class="mt-1">
+            <button
+              class="btn btn-sm btn-outline-primary me-2"
+              (click)="editproduct(p)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-sm btn-outline-danger"
+              (click)="delete(p.id)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <div class="text-end m-2">
+      <button
+        type="submit"
+        class="btn btn-secondary rounded"
+        (click)="clearall()"
+      >
+        ClearAll
+      </button>
+    </div>
+  </ul>
 </div>
